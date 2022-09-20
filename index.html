@@ -20,7 +20,7 @@
         <div class="container">
             <!-- title -->
             <div class="title d-flex justify-content-center">
-                <img src="./assets/icons/note.png"/>
+                <img src="./assets/icons/note.png" />
                 <h3>Notepad</h3>
             </div>
 
@@ -50,7 +50,8 @@
             </div>
 
             <!-- search function -->
-            <div class="search mt-5">
+            <!-- show if the notes is not empty -->
+            <div class="search mt-5" v-if="notes.length > 0">
                 <div class="input-group flex-nowrap">
                     <span class="input-group-text" id="addon-wrapping">
                         <img
@@ -58,15 +59,20 @@
                             style="width: 15px"
                         />
                     </span>
+                    <!-- set shortcut for search input "alt + k" -->
                     <input
                         type="text"
                         class="form-control"
-                        placeholder="Search your notepad title"
+                        placeholder="Search your notepad title (shortcut ALT + K)"
                         aria-label="search"
                         aria-describedby="search"
                         v-model="searchInput"
+                        accesskey="k"
                     />
                 </div>
+            </div>
+            <div class="note-empty mt-5" v-else>
+                <h6>Your Note is empty, you can add some!</h6>
             </div>
 
             <!-- notes display -->

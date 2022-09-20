@@ -8,6 +8,15 @@ body {
     align-items: center;
 }
 
+.note-empty {
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    border: #ffc107 1px solid;
+    border-radius: 5px;
+}
+
 /* rewrite */
 .container {
     width: 100%;
